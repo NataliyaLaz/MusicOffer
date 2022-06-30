@@ -42,7 +42,7 @@ class LeftView: UIView {
     }
     
     private func setupViews() {
-        backgroundColor = .black
+        backgroundColor = .blue
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(closeButton)
         addSubview(iMusicImageView)
