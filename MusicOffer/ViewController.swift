@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    class Device {
+      static var isIpad : Bool { return UIDevice.current.userInterfaceIdiom == .pad }
+    }
+    
     private let leftView = LeftView()
     private let rightView = RightView()
     
@@ -21,8 +25,18 @@ class ViewController: UIViewController {
         setConstraints()
     }
     
+    override func viewDidLayoutSubviews() {
+        rightView.activateButton.applyGradient(colors: [UIColor.specialBlue.cgColor, UIColor.specialPink.cgColor])
+        rightView.activateButton.dropShadow()
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            print("iPad")
+        }else{
+            print("not iPad")
+        }
+    }
+    
     private func setupViews() {
-        view.backgroundColor = .red
+        view.backgroundColor = .black
         
         mainStackView = UIStackView(arrangedSubviews: [leftView, rightView],
                                          axis: .horizontal,
@@ -31,13 +45,14 @@ class ViewController: UIViewController {
         view.addSubview(mainStackView)
       
     }
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             mainStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
     }
 }
