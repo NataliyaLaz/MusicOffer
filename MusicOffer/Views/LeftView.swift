@@ -9,6 +9,10 @@ import UIKit
 
 class LeftView: UIView {
     
+    class Device {
+        static var isIpad : Bool { return UIDevice.current.userInterfaceIdiom == .pad }
+    }
+    
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setBackgroundImage(UIImage(systemName: "xmark"), for: .normal)
@@ -21,7 +25,11 @@ class LeftView: UIView {
     private let iMusicImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "music")
-        imageView.contentMode = .scaleAspectFit
+        if Device.isIpad {
+            imageView.contentMode = .scaleAspectFill
+        } else {
+            imageView.contentMode = .scaleAspectFit
+        }
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -58,7 +66,7 @@ class LeftView: UIView {
         NSLayoutConstraint.activate([
             iMusicImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             iMusicImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            iMusicImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8)
+            iMusicImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9)
         ])
     }
 }

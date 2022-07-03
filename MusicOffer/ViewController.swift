@@ -9,10 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    class Device {
-      static var isIpad : Bool { return UIDevice.current.userInterfaceIdiom == .pad }
-    }
-    
     private let leftView = LeftView()
     private let rightView = RightView()
     
@@ -28,11 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         rightView.activateButton.applyGradient(colors: [UIColor.specialBlue.cgColor, UIColor.specialPink.cgColor])
         rightView.activateButton.dropShadow()
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            print("iPad")
-        }else{
-            print("not iPad")
-        }
+        
     }
     
     private func setupViews() {
@@ -43,7 +35,6 @@ class ViewController: UIViewController {
                                          spacing: 0)
         mainStackView.distribution = .fillEqually
         view.addSubview(mainStackView)
-      
     }
     
     private func setConstraints() {

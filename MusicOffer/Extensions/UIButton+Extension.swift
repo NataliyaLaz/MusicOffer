@@ -25,7 +25,6 @@ extension UIButton {
             gradientLayer.cornerRadius = 12
                        gradientLayer.masksToBounds = false
         self.layer.insertSublayer(gradientLayer, at: 0)
-//
         }
     
     func dropShadow(scale: Bool = true) {
