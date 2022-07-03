@@ -13,12 +13,15 @@ class ViewController: UIViewController {
     private let rightView = RightView()
     
     private var mainStackView = UIStackView()
+    
+    let customAlert = CustomAlert()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
         setConstraints()
+        setDelegates()
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,6 +40,10 @@ class ViewController: UIViewController {
         view.addSubview(mainStackView)
     }
     
+    private func setDelegates() {
+        rightView.activateDelegate = self
+    }
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
@@ -45,6 +52,18 @@ class ViewController: UIViewController {
             mainStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
+    }
+}
+
+//MARK: - ActivateProtocol
+
+extension ViewController: ActivateProtocol{
+   
+    func activateButtonTapped() {
+        
+        customAlert.alertCustom(viewController: self, repsOrTimer: "Reps")
+           print("activateButtonTapped")
+
     }
 }
 

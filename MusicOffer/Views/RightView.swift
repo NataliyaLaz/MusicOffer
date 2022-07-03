@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ActivateProtocol: AnyObject {
+    func activateButtonTapped()
+}
+
 class RightView:UIView {
     
     class Device {
@@ -106,7 +110,7 @@ class RightView:UIView {
         button.tintColor = .white
         button.layer.cornerRadius = 12
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(RightView.self, action: #selector(activateButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(activateButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -119,6 +123,8 @@ class RightView:UIView {
     
     private var generalStackView = UIStackView()
     
+    weak var activateDelegate: ActivateProtocol?
+    
     override init(frame: CGRect){
         super.init(frame:frame)
         setupViews()
@@ -130,8 +136,8 @@ class RightView:UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func activateButtonTapped() {
-        print("activateButtonTapped")
+    @objc private func activateButtonTapped() {
+        activateDelegate?.activateButtonTapped()
     }
     
     private func setupViews() {
