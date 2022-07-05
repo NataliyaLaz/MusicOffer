@@ -23,7 +23,6 @@
 		88B35F85286CD3C10062F9E0 /* LeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B35F84286CD3C10062F9E0 /* LeftView.swift */; };
 		88B4E17C28702C4E0009731E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E17B28702C4D0009731E /* UILabel+Extension.swift */; };
 		88B4E17E287037E10009731E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E17D287037E10009731E /* UIButton+Extension.swift */; };
-		88B4E182287082AE0009731E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E181287082AE0009731E /* UIView+Extension.swift */; };
 		88B7254328720CA300CFF0FA /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B7254228720CA300CFF0FA /* CustomAlert.swift */; };
 		88FD2AD2286F826300CF3181 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FD2AD1286F826300CF3181 /* TimerView.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		88B35F84286CD3C10062F9E0 /* LeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftView.swift; sourceTree = "<group>"; };
 		88B4E17B28702C4D0009731E /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		88B4E17D287037E10009731E /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		88B4E181287082AE0009731E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		88B7254228720CA300CFF0FA /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		88FD2AD1286F826300CF3181 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,7 +68,6 @@
 				88493E64286E1CF90051161D /* UIStackView+Extension.swift */,
 				88B4E17B28702C4D0009731E /* UILabel+Extension.swift */,
 				88B4E17D287037E10009731E /* UIButton+Extension.swift */,
-				88B4E181287082AE0009731E /* UIView+Extension.swift */,
 				8823A53828736A55009187A2 /* Int+Extension.swift */,
 			);
 			path = Extensions;
@@ -205,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FD2AD2286F826300CF3181 /* TimerView.swift in Sources */,
-				88B4E182287082AE0009731E /* UIView+Extension.swift in Sources */,
 				88493E69286E1E360051161D /* RightView.swift in Sources */,
 				88B7254328720CA300CFF0FA /* CustomAlert.swift in Sources */,
 				88B4E17C28702C4E0009731E /* UILabel+Extension.swift in Sources */,
