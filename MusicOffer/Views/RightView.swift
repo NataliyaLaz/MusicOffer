@@ -17,7 +17,7 @@ class RightView:UIView {
         static var isIpad : Bool { return UIDevice.current.userInterfaceIdiom == .pad }
     }
     
-    let screenWidth = UIScreen.main.bounds.size.height
+    let screenWidth = UIScreen.main.bounds.size.height < UIScreen.main.bounds.size.width ? UIScreen.main.bounds.size.height : UIScreen.main.bounds.size.width
     
     private let chanceLabel: UILabel = {
         let label = UILabel()
@@ -70,10 +70,10 @@ class RightView:UIView {
         return label
     }()
     
-    private let daysView = TimerView()
-    private let hoursView = TimerView()
-    private let minutesView = TimerView()
-    private let secondsView = TimerView()
+    let daysView = TimerView()
+    let hoursView = TimerView()
+    let minutesView = TimerView()
+    let secondsView = TimerView()
     
     private let colonLabel1 = UILabel(text: ":")
     private let colonLabel2 = UILabel(text: ":")
@@ -144,6 +144,7 @@ class RightView:UIView {
         backgroundColor = .black
         
         timerStackView = UIStackView(arrangedSubviews: [daysView,colonLabel1,hoursView, colonLabel2,minutesView,colonLabel3,secondsView], axis: .horizontal, spacing: 5)
+        timerStackView.distribution = .equalSpacing
         
         if Device.isIpad {
             
@@ -183,8 +184,7 @@ class RightView:UIView {
             
             NSLayoutConstraint.activate([
                 generalStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-                generalStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-                generalStackView.trailingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor, constant: -95)
+                generalStackView.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
             
             NSLayoutConstraint.activate([
@@ -192,8 +192,8 @@ class RightView:UIView {
             ])
             
             NSLayoutConstraint.activate([
-                activateButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.11),
-                activateButton.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.498)
+                activateButton.heightAnchor.constraint(equalToConstant: 88),
+                activateButton.widthAnchor.constraint(equalToConstant: 403)
             ])
             
         } else {

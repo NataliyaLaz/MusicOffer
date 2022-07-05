@@ -19,4 +19,13 @@ extension UILabel {
         self.textAlignment = .center
         self.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    func addShadow(scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.specialBlue.cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 20
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+    }
 }

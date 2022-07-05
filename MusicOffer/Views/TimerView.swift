@@ -9,7 +9,7 @@ import UIKit
 
 class TimerView: UIView {
     
-    private let timerLabel: UILabel = {
+    let timerLabel: UILabel = {
         let label = UILabel()
         label.text = "00"
         label.font = .systemFont(ofSize: 15, weight: .bold)

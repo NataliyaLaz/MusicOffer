@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8823A53928736A55009187A2 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8823A53828736A55009187A2 /* Int+Extension.swift */; };
 		88493E62286E1AAE0051161D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88493E61286E1AAE0051161D /* UIColor+Extension.swift */; };
 		88493E65286E1CF90051161D /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88493E64286E1CF90051161D /* UIStackView+Extension.swift */; };
 		88493E69286E1E360051161D /* RightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88493E68286E1E360051161D /* RightView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8823A53828736A55009187A2 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		88493E61286E1AAE0051161D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		88493E64286E1CF90051161D /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		88493E68286E1E360051161D /* RightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				88B4E17B28702C4D0009731E /* UILabel+Extension.swift */,
 				88B4E17D287037E10009731E /* UIButton+Extension.swift */,
 				88B4E181287082AE0009731E /* UIView+Extension.swift */,
+				8823A53828736A55009187A2 /* Int+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				88B4E17E287037E10009731E /* UIButton+Extension.swift in Sources */,
 				88B35F75286CC8940062F9E0 /* ViewController.swift in Sources */,
 				88B35F71286CC8940062F9E0 /* AppDelegate.swift in Sources */,
+				8823A53928736A55009187A2 /* Int+Extension.swift in Sources */,
 				88B35F73286CC8940062F9E0 /* SceneDelegate.swift in Sources */,
 				88B35F85286CD3C10062F9E0 /* LeftView.swift in Sources */,
 				88493E62286E1AAE0051161D /* UIColor+Extension.swift in Sources */,

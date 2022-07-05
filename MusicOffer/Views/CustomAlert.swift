@@ -7,8 +7,9 @@
 
 import UIKit
 
-class CustomAlert {
+class CustomAlert: UIView {
 
+    
     private let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -18,6 +19,7 @@ class CustomAlert {
 
     private let alertView: UIView = {
         let view = UIView()
+        
         view.backgroundColor = .specialDarkBlue
         view.layer.cornerRadius = 20
         return view
@@ -29,8 +31,8 @@ class CustomAlert {
     private let setsTextField = UITextField()
     private let repsTextField = UITextField()
 
-    func alertCustom(viewController: UIViewController, repsOrTimer: String) {
-
+    func alertCustom(viewController: UIViewController, timer: Int) {
+        
         guard let parentView = viewController.view else { return }
      //   mainView = parentView
 
@@ -46,23 +48,40 @@ class CustomAlert {
                                  height: 150)
         scrollView.addSubview(alertView)
 
-        let greatLabel = UILabel(frame: CGRect(x: 10,
+        let greatLabel = UILabel(frame: CGRect(x: 100,
                                                  y: alertView.frame.height * 0.4,
-                                                 width: alertView.frame.width - 20,
+                                                 width: alertView.frame.width - 250,
                                                  height: 25))
         greatLabel.text = "Great!"
         greatLabel.textAlignment = .center
         greatLabel.font = .systemFont(ofSize: 35, weight: .bold)
         greatLabel.textColor = .white
+        greatLabel.addShadow()
         alertView.addSubview(greatLabel)
-
-        let offerActivatedLabel = UILabel(text: "Offer activated at 14:00")
+        
+        let days = timer.convertIntoTime()[0]
+        let hours = timer.convertIntoTime()[1]
+        let minutes = timer.convertIntoTime()[2]
+        let seconds = timer.convertIntoTime()[3]
+        
+        var timerStringPresentation: String
+        
+        if days != "00" {
+            timerStringPresentation = "\(days) : \(hours) : \(minutes) : \(seconds)"
+        } else if hours != "00" {
+            timerStringPresentation = "\(hours) : \(minutes) : \(seconds)"
+        } else {
+            timerStringPresentation = "\(minutes) : \(seconds)"
+        }
+    
+        let offerActivatedLabel = UILabel(text: "Offer activated at \(timerStringPresentation)")
         offerActivatedLabel.translatesAutoresizingMaskIntoConstraints = true
         offerActivatedLabel.frame = CGRect(x: 30,
                                  y: greatLabel.frame.maxY + 10,//lowest point of greatLabel + 10
                                  width: alertView.frame.width - 60,
                                  height: 20)
         alertView.addSubview(offerActivatedLabel)
+        
 
 
         UIView.animate(withDuration: 0.3) {
